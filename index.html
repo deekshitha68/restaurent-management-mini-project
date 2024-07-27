@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>WELCOME TO TASTY RESTAURENT!!</h1>
+        <button id="mode-toggle">Switch to Dark Mode</button>
+    </header>
+    <main>
+        <section class="menu">
+            <h2>Menu</h2>
+            <ul id="menu-list">
+                <!-- Menu items will be listed here -->
+            </ul>
+        </section>
+        <section class="order-form">
+            <h2>Place Your Order</h2>
+            <form id="order-form">
+                <div id="order-items">
+                    <div class="order-item">
+                        <label for="item-code-1">Item Code:</label>
+                        <input type="number" id="item-code-1" name="item-code[]" required>
+                        <label for="quantity-1">Quantity:</label>
+                        <input type="number" id="quantity-1" name="quantity[]" required>
+                        <button type="button" class="remove-button" onclick="removeItem(this)">Remove</button>
+                    </div>
+                </div>
+                <button type="button" class="add-button" onclick="addItem()">Add Another Item</button>
+                <button type="submit" class="submit-button">Submit Order</button>
+            </form>
+        </section>
+        <section class="bill">
+            <h2>Bill</h2>
+            <pre id="bill"></pre>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

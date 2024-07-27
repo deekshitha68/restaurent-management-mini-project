@@ -1,0 +1,217 @@
+/* General reset and basic styles */
+body, h1, h2, ul, li, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header.dark-mode {
+    background: #444;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+#mode-toggle {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#mode-toggle.dark-mode {
+    background: #e74c3c;
+}
+
+main {
+    padding: 20px;
+}
+
+.menu {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.menu h2 {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+body.light-mode .menu {
+    background: url('path/to/your/light-background-image.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+body.dark-mode .menu {
+    background: url('path/to/your/dark-background-image.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+#menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+#menu-list li {
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+    color: #333; /* Dark text color for light mode */
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+body.dark-mode #menu-list li {
+    background: rgba(0, 0, 0, 0.8); /* Dark mode background */
+    color: #f4f4f4; /* Light text color for dark mode */
+    border: 1px solid #555;
+}
+
+.order-form {
+    margin-bottom: 20px;
+}
+
+.order-form h2 {
+    background: #444;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.order-form.dark-mode h2 {
+    background: #555;
+}
+
+.order-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body.dark-mode .order-item {
+    background: #444;
+    border: 1px solid #555;
+}
+
+.order-item label {
+    margin-right: 10px;
+}
+
+.order-item input {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.remove-button {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-button:hover {
+    background: #c0392b;
+}
+
+.add-button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.add-button:hover {
+    background: #2980b9;
+}
+
+.submit-button {
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-button:hover {
+    background: #27ae60;
+}
+
+.bill {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.bill.dark-mode {
+    background: #444;
+    border: 1px solid #555;
+    color: #f4f4f4;
+}
+
+.bill h2 {
+    background: #444;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+body.dark-mode .bill h2 {
+    background: #555;
+}
+
+.thank-you-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.thank-you-message.light-mode {
+    color: #2ecc71; /* Green color for light mode */
+    font-family: 'Courier New', Courier, monospace; /* Different font style */
+}
+
+.thank-you-message.dark-mode {
+    color: #f39c12; /* Yellow color for dark mode */
+    font-family: 'Courier New', Courier, monospace; /* Different font style */
+}
