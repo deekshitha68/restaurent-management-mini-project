@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bill = document.getElementById('bill');
     const orderItems = document.getElementById('order-items');
     const modeToggle = document.getElementById('mode-toggle');
+    let itemIndex = 1;
 
     // Display menu items
     menuItems.forEach(item => {
@@ -34,6 +35,29 @@ document.addEventListener('DOMContentLoaded', () => {
         listItem.textContent = `Code: ${item.code}, Name: ${item.name}, Price: ₹${item.price.toFixed(2)}, Available: ${item.quantity}`;
         menuList.appendChild(listItem);
     });
+
+    // Function to add a new item field
+    function addItem() {
+        itemIndex++;
+        
+        const newItemDiv = document.createElement('div');
+        newItemDiv.classList.add('order-item');
+        
+        newItemDiv.innerHTML = `
+            <label for="item-code-${itemIndex}">Item Code:</label>
+            <input type="number" id="item-code-${itemIndex}" name="item-code[]" required>
+            <label for="quantity-${itemIndex}">Quantity:</label>
+            <input type="number" id="quantity-${itemIndex}" name="quantity[]" required>
+            <button type="button" class="remove-button" onclick="removeItem(this)">Remove</button>
+        `;
+        
+        orderItems.appendChild(newItemDiv);
+    }
+
+    // Function to remove an item field
+    function removeItem(button) {
+        button.parentElement.remove();
+    }
 
     // Handle form submission
     orderForm.addEventListener('submit', (e) => {
@@ -78,4 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('dark-mode');
         modeToggle.classList.toggle('dark-mode');
     });
+
+    // Attach the addItem function to the global scope so it can be used in the HTML onclick attribute
+    window.addItem = addItem;
+    window.removeItem = removeItem;
 });
+
